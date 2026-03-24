@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 21 - Operacje na liczbach</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            color: #222;
+        }
+        .pojemnik {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Zadanie 21</h2>
+    <div class="pojemnik" id="wyniki"></div>
+
+    <script>
+        let wpisanyTekst = prompt("Podaj liczbę całkowitą:");
+        let liczba = parseInt(wpisanyTekst);
+        let oknoWynikow = document.getElementById("wyniki");
+
+        if(isNaN(liczba)) {
+            oknoWynikow.innerHTML = "Wprowadzona wartość nie jest liczbą całkowitą. Odśwież stronę.";
+        } else {
+            oknoWynikow.innerHTML += "Wprowadzona liczba: " + liczba + "<br>";
+            oknoWynikow.innerHTML += "Liczba o znaku przeciwnym: " + (-liczba) + "<br>";
+            oknoWynikow.innerHTML += "Powiększona o 15: " + (liczba + 15) + "<br>";
+            oknoWynikow.innerHTML += "Powiększona o 0,5: " + (liczba + 0.5) + "<br>";
+            oknoWynikow.innerHTML += "Kwadrat wprowadzonej liczby: " + (liczba * liczba) + "<br>";
+            oknoWynikow.innerHTML += "Wartość jej dzielenia przez 2: " + (liczba / 2) + "<br>";
+            oknoWynikow.innerHTML += "Reszta z jej dzielenia przez 2: " + (liczba % 2) + "<br>";
+            oknoWynikow.innerHTML += "Liczba o jeden większa: " + (liczba + 1) + "<br>";
+            oknoWynikow.innerHTML += "Liczba o jeden mniejsza: " + (liczba - 1) + "<br>";
+            
+            let poPodziale = liczba / 3;
+            oknoWynikow.innerHTML += "Zaokrąglona w dół (podział przez 3): " + Math.floor(poPodziale) + "<br>";
+            oknoWynikow.innerHTML += "Zaokrąglona w górę (podział przez 3): " + Math.ceil(poPodziale) + "<br>";
+            oknoWynikow.innerHTML += "Zaokrąglona do najbliższej całkowitej (podział przez 3): " + Math.round(poPodziale) + "<br>";
+            
+            oknoWynikow.innerHTML += "Pierwiastek z wprowadzonej liczby: " + Math.sqrt(Math.abs(liczba)) + "<br>";
+            
+            let losowaLiczba = Math.floor(Math.random() * 51);
+            oknoWynikow.innerHTML += "Iloczyn z liczbą losową 0-50 (" + losowaLiczba + "): " + (liczba * losowaLiczba) + "<br>";
+            
+            oknoWynikow.innerHTML += "Wartość absolutna: " + Math.abs(liczba) + "<br>";
+        }
+    </script>
+
+</body>
+</html>
